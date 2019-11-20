@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<conio.h>
 
 //Function to create graph
 void createGraph(int adjMatrix[][3]){
@@ -153,11 +152,11 @@ int main(){
     }
 
     //Player 1 gets to choose their character
-    printf("Choose: X or O? "); scanf("%c", &player1);
+    printf("Player 1:\nChoose: X or O? "); scanf("%c", &player1);
 
     //If not "X" or "O", ask player 1 to input the choice again
     while(player1!='X' && player1!='O'){
-        printf("Please choose only between X or O: "); scanf("%c", &player1);
+        printf("Please choose only between X or O: "); scanf("\r%c", &player1);
     }
 
     if(player1=='X'){player2='O';}
@@ -170,6 +169,8 @@ int main(){
         boardDisplay(board);
 
         //Accept user input for coordinates
+        if(count%2==0){printf("Player 1's turn:\n");}
+        else{printf("Player 2's turn:\n");}
         printf("Coordinates of input:"); scanf("%d %d", &i, &j);
 
         //Check for invalid input
@@ -228,11 +229,20 @@ int main(){
             }
 
             ++count;
+            
+            //A regex expression to clear the screen after every iteration
+            printf("\e[1;1H\e[2J");
+            
+            /*
+            Alternatively you can use:
+                system("clear"); //for Linux systems
+                system("cls"); //for Windows 
+            */
 
-        }else{printf("Position already occupied\n");}
-
-        //A regex expression to clear the screen after every iteration
-        printf("\e[1;1H\e[2J"); 
+        }else{
+            printf("\e[1;1H\e[2J");
+            printf("Position already occupied\n");
+        } 
 
     }
 
