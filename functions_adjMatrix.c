@@ -119,3 +119,9 @@ void boardDisplay(char board[][5]){
         printf("\n");
     }
 }
+
+//Function to check for invalid input of coordinates (character input)
+void cleanBuffer(){
+    int n;
+    while((n=getchar())!=EOF && n!='\n');
+}
