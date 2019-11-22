@@ -13,3 +13,5 @@ char checkRightDiagonal(int adjMatrix[][3]);
 int elementAt(int adjMatrix[][3], int vertex_from, int vertex_to);
 
 void boardDisplay(char board[][5]);
+
+void cleanBuffer();
