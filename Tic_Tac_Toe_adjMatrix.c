@@ -55,9 +55,12 @@ int main(){
         if(count%2==0){printf("Player 1's turn:\n");}
         else{printf("Player 2's turn:\n");}
         printf("Coordinates of input:"); scanf("%d %d", &i, &j);
+        cleanBuffer();
 
         //Check for invalid input
         if(i<1 || i>3 || j<1 || j>3){
+            //Clear the screen
+            printf("\e[1;1H\e[2J");
             printf("Invalid input\n");
             continue;
         }
