@@ -2,7 +2,8 @@
 #include<stdlib.h>
 #include "functions_adjMatrix.h"
 
-int main(){
+void tictactoe(void) {
+
     int adjMatrix[3][3];
     char player1 , player2, board[5][5];
     int i, j, count=0;
@@ -136,7 +137,10 @@ int main(){
     if(checkRows(adjMatrix)=='r' && checkCols(adjMatrix)=='c' && checkLeftDiagonal(adjMatrix)=='l' && checkRightDiagonal(adjMatrix)=='d'){
         printf("Draw\n");
     }
+}
 
+int main(void) {
+    tictactoe();
     return 0;
 
 }
