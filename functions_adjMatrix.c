@@ -121,7 +121,7 @@ void boardDisplay(char board[][5]){
 }
 
 //Function to check for invalid input of coordinates (character input)
-void cleanBuffer(){
+void cleanBuffer(void){
     int n;
     while((n=getchar())!=EOF && n!='\n');
 }
